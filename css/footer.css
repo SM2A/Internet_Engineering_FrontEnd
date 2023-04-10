@@ -2,10 +2,10 @@ footer {
     /*TODO It has space from bottom of the page*/
     display: inline-block;
     background: var(--brown-dark-primary);
-    position: sticky;
+    position: sticky; /*TODO Should be sticky*/
     bottom: 0;
     width: 100%;
-    padding: 0.5%;
+    /*height: 2em;*/
 }
 
 #footer-note {

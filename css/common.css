@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 :root {
     --brown-dark-primary: #593C1C;
     --brown-light-primary: #A97B47;
