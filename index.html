@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <header>
@@ -19,7 +21,7 @@
     </div>
 
     <div id="header-search-box">
-        <form action="/" method="GET" id="header-search-form">
+        <form action="#" method="GET" id="header-search-form">
             <select name="type" id="header-search-dropdown">
                 <option value="name">name</option>
                 <option value="category">category</option>
@@ -30,41 +32,15 @@
     </div>
 
     <div id="header-dynamic-box">
-        <div id="header-user-auth" hidden="hidden">
+        <div id="header-user-auth">
             <button type="button" class="auth-btn">Register</button>
             <button type="button" class="auth-btn">Login</button>
         </div>
-        <div id="header-user-cart">
+        <div id="header-user-cart" hidden="hidden">
             <h2 id="header-username">#username</h2>
             <button type="button" id="header-cart">Cart #</button>
         </div>
     </div>
-
-
-
-    <!--<div>
-        <p id="default-page-options">
-            <a class="authorization" href="/static/Login.html">Sign in</a>&nbsp or &nbsp<a
-                class="authorization" href="/static/customer/Signup.html">Create an Account</a></p>
-        <p id="loggedIn-page-options">
-            <a class="authorization" href="/static/customer/Profile.html">Profile</a>&nbsp or &nbsp<a
-                class="authorization" id="logout-link" onclick="logout()">Logout</a></p>
-        <form action="/static/Products.html" target="_self" method="GET" class="forms" name="name">
-            <input type="text" id="search-field" name="name" placeholder="Search all products...">
-            <input type="image" id="glass-pic" src="/img/magnifying-glass.png" alt="Submit" value="submit"/>
-        </form>
-        <form action="" target="_self" method="post" class="forms">
-            <input type="button" id="cart-field" value="Cart" onclick="goToCart()">
-        </form>
-    </div>
-
-    <div>
-        <nav>
-            <ul class="navbar-lists" id="navbar-lists">
-                <li><a href="http://localhost:3000/static/Products.html">ALL PRODUCTS</a></li>
-            </ul>
-        </nav>
-    </div>-->
 
 </header>
 
@@ -136,5 +112,9 @@
 <h1>Hello World</h1>
 </body>
 
+
+<footer>
+    <p id="footer-note">2023 @UT</p>
+</footer>
 
 </html>
