@@ -70,7 +70,8 @@ header {
 }
 
 #header-search-field:focus {
-    outline: none; !important;
+    outline: none;
+!important;
     border: none;
 }
 
