@@ -11,6 +11,10 @@ html {
     position: relative;
 }
 
+body {
+    background: var(--white-primary);
+}
+
 :root {
     --brown-dark-primary: #593C1C;
     --brown-light-primary: #A97B47;
