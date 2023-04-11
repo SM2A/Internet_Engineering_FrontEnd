@@ -41,6 +41,12 @@ body {
     margin: 1rem;
 }
 
+.toggle:hover {
+    opacity: 70%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
 .toggle-switch {
     display: inline-block;
     background: #ccc;
@@ -98,6 +104,12 @@ body {
     border-radius: 16px;
 }
 
+.radio-label:hover {
+    opacity: 70%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
 input[type=radio] {
     display:none;
 }
@@ -121,7 +133,7 @@ input[type=radio]:checked + .radio-label {
     text-align: center;
 }
 
-.product-container:hover {
+.product-card:hover {
     opacity: 70%;
     transition: 0.5s;
     cursor: pointer;
