@@ -2,6 +2,15 @@
     font-family: sans-serif;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+
 :root {
     --brown-dark-primary: #593C1C;
     --brown-light-primary: #A97B47;

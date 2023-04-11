@@ -1,10 +1,8 @@
 footer {
-    position: sticky;
-    left: 0;
+    position: relative;
     bottom: 0;
     width: 100%;
     background: var(--brown-dark-primary);
-    color: var(--white-primary);
     text-align: center;
     margin: 0;
     padding: 0;
