@@ -81,3 +81,33 @@
     font-size: 1.5rem;
 }
 
+.table-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.table-header label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.product-card label {
+    color: var(--gray-primary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.product-card img {
+    max-width: 5rem;
+    max-height: 5rem;
+}
+
