@@ -1,0 +1,83 @@
+.content {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-card {
+    background: white;
+    box-shadow: 0 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+#use-info-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.user-info-data {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.user-info-logo {
+    margin-right: 8px;
+}
+
+.user-info-logo > img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.user-info-data-label {
+    color: var(--brown-dark-primary);
+    font-weight: bold;
+}
+
+.user-info-data > label {
+    color: var(--brown-dark-primary);
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+#credit-input {
+    border: 1px solid #919191;
+    box-shadow: 0 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 16px;
+    text-align: center;
+    background: transparent;
+    height: 2rem;
+    outline: none; !important;
+}
+
+#credit-input:focus {
+    outline: none; !important;
+}
+
+.action-btn {
+    height: 2.5rem;
+    font-size: 24px;
+}
+
+.title-logo {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 8px;
+}
+
+.title-label {
+    color: var(--brown-dark-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+

@@ -114,20 +114,6 @@ body {
     font-weight: bold;
 }
 
-.action-btn {
-    background-color: var(--brown-dark-primary);
-    color: white;
-    border-radius: 16px;
-    border: none;
-    font-size: 24px;
-}
-
-.action-btn:hover {
-    opacity: 70%;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
 .rating {
     display: flex;
     flex-wrap: wrap;
@@ -223,6 +209,13 @@ body {
     font-weight: 500;
 }
 
+.comment-rating-container img {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: 8px;
+}
+
 .comment-rating-container img:hover {
     opacity: 50%;
     transition: 0.5s;
@@ -264,6 +257,12 @@ body {
     border: none;
     outline: none; !important;
     padding: 0.5rem;
+}
+
+#similar-products-label {
+    color: var(--brown-dark-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 #similar-products {

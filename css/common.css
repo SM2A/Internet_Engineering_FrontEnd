@@ -15,6 +15,20 @@ body {
     background: var(--white-primary);
 }
 
+.action-btn {
+    background-color: var(--brown-dark-primary);
+    color: white;
+    border-radius: 16px;
+    border: none;
+    font-size: 24px;
+}
+
+.action-btn:hover {
+    opacity: 70%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
 :root {
     --brown-dark-primary: #593C1C;
     --brown-light-primary: #A97B47;
