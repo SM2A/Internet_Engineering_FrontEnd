@@ -40,3 +40,21 @@ body {
     --yellow-primary: #FFC700;
     --cream-dark-primary: #D8C1A8;
 }
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: var(--brown-dark-primary);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 2rem;
+}
+
+footer > p {
+    color: white;
+    margin: 1rem;
+    padding: 0.25rem;
+    position: relative;
+}
