@@ -1,23 +1,5 @@
-.btn-color{
-    background-color: #0e1c36;
-    color: #fff;
-
-}
-
-.profile-image-pic{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-}
-
-
-
 .cardbody-color{
     background-color: var(--cream-primary);
-}
-
-a{
-    text-decoration: none;
 }
 
 .form-control:focus {
