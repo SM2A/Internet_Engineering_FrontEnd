@@ -1,9 +1,9 @@
 const COMMODITIES_PATH = "http://localhost:8080/commodities";
+const ADD_TO_CART_PATH = "http://localhost:8080/commodities";
 
 function getRequest(url) {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, false);
-    // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
     xhr.send(null);
     return JSON.parse(xhr.responseText);
 }
@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         addToCart.className = "btn product-add-to-cart";
         addToCart.innerHTML = "add to cart";
         addToCart.type = "button";
+        addToCart.onclick = function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", ADD_TO_CART_PATH + "username" + "/" + response[i].id, false); // TODO: change username
+            xhr.send(null);
+        }
 
         let cardFooter = document.createElement('div');
         cardFooter.className = "card-footer";
@@ -54,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let url = new URL("http://localhost:3000/static/product.html");
         url.searchParams.append("id", response[i].id);
         let value = "window.location=" + "'" + url + "'";
-        productCard.setAttribute("onclick", value);
+
+        productTitle.setAttribute("onclick", value);
+        productImage.setAttribute("onclick", value);
 
         document.getElementById("products-container").appendChild(productCard);
     }
