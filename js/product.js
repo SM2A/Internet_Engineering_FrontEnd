@@ -117,27 +117,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < comments.length; i++) {
 
+        let commentMsg = document.createElement('h3');
+        commentMsg.className = "comment-msg";
+        commentMsg.innerHTML = comments[i].text;
 
-        /*<div className="comment-card">
-            <h3 className="comment-msg">This was awesome!!!</h3>
-            <div className="comment-user-date">
-                <p>2023-03-20</p>
-                <p>&#x2022;</p>
-                <p>#username</p>
-            </div>
-            <div className="comment-rating-container">
-                <p>Is this comment helpful?</p>
-                <p>1</p>
-                <img src="../assets/thumbs-up.png" alt="Thumbs up">
-                    <p>1</p>
-                    <img src="../assets/thumbs-down.png" alt="Thumbs Down">
-            </div>
-        </div>*/
+        let commentDate = document.createElement('p');
+        commentDate.innerHTML = comments[i].date;
 
+        let commentSeparator = document.createElement('p');
+        commentSeparator.innerHTML = "&#x2022;";
 
+        let commentUser = document.createElement('p');
+        commentUser.innerHTML = comments[i].userEmail;
 
-        let comment = document.createElement('div');
-        productCard.className = "product-card";
+        let commentDetail = document.createElement('div');
+        commentDetail.className = "comment-user-date";
+        commentDetail.appendChild(commentDate);
+        commentDetail.appendChild(commentSeparator);
+        commentDetail.appendChild(commentUser);
+
+        let ratingLabel = document.createElement('p');
+        ratingLabel.innerHTML = "Is this comment helpful?";
+
+        let rateLikes = document.createElement('p');
+        rateLikes.innerHTML = comments[i].likes;
+
+        let rateDislikes = document.createElement('p');
+        rateDislikes.innerHTML = comments[i].dislikes;
+
+        let thumbsUp = document.createElement('img');
+        thumbsUp.src = "../assets/thumbs-up.png";
+
+        let thumbsDown = document.createElement('img');
+        thumbsDown.src = "../assets/thumbs-down.png";
+
+        let commentRating = document.createElement('div');
+        commentRating.className = "comment-rating-container";
+        commentRating.appendChild(ratingLabel);
+        commentRating.appendChild(rateLikes);
+        commentRating.appendChild(thumbsUp);
+        commentRating.appendChild(rateDislikes);
+        commentRating.appendChild(thumbsDown);
+
+        let commentCard = document.createElement('div');
+        commentCard.className = "comment-card";
+        commentCard.appendChild(commentMsg);
+        commentCard.appendChild(commentDetail);
+        commentCard.appendChild(commentRating);
 
 
         document.getElementById("comment-container").insertBefore(productCard, document.getElementById("submit-comment-container"));
