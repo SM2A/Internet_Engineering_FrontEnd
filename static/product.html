@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/product.css">
     <link rel="stylesheet" href="../css/product-card.css">
+	<script type="module" src="../js/product.js"></script>
 </head>
 
 <header>
@@ -38,30 +39,28 @@
     <div id="product-detail">
 
         <div id="product-img-container">
-            <img src="../assets/phone.png" alt="Product image" id="product-img">
+            <img alt="Product image" id="product-img">
         </div>
 
         <div id="product-info-container">
 
-            <h1 id="product-title">Phone</h1>
+            <h1 id="product-title"></h1>
             <div id="product-stock-rating">
-                <p id="product-stock">10 left in stock</p>
+                <p id="product-stock"></p>
                 <div id="product-rate-info">
                     <img src="../assets/star.png" alt="Star rating" id="rate-star">
-                    <label id="product-rating">4.1</label>
+                    <label id="product-rating"></label>
                     <label id="product-rate-count">(12)</label>
                 </div>
             </div>
-            <p id="product-provider">by <a href="#">Huawei</a></p>
+            <p id="product-provider">by <a id="provider-name" href="#"></a></p>
             <p id="category-label">Category(s)</p>
             <div id="product-category-container">
-                <ul>
-                    <li class="product-category">Technology</li>
-                    <li class="product-category">IT</li>
+                <ul id="category-container">
                 </ul>
             </div>
             <div id="buy-product-container">
-                <h2 id="product-price">500$</h2>
+                <h2 id="product-price"></h2>
                 <button type="button" class="btn product-add-to-cart" id="product-add-to-cart">add to cart</button>
             </div>
 
@@ -109,39 +108,7 @@
 
         <div>
             <label id="comment-label">Comments</label>
-            <label id="comment-count">(2)</label>
-        </div>
-
-        <div class="comment-card">
-            <h3 class="comment-msg">This was awesome!!!</h3>
-            <div class="comment-user-date">
-                <p>2023-03-20</p>
-                <p>&#x2022;</p>
-                <p>#username</p>
-            </div>
-            <div class="comment-rating-container">
-                <p>Is this comment helpful?</p>
-                <p>1</p>
-                <img src="../assets/thumbs-up.png" alt="Thumbs up">
-                <p>1</p>
-                <img src="../assets/thumbs-down.png" alt="Thumbs Down">
-            </div>
-        </div>
-
-        <div class="comment-card">
-            <h3 class="comment-msg">This was awfulllllllllllllllllll!!!</h3>
-            <div class="comment-user-date">
-                <p>2023-03-20</p>
-                <p>&#x2022;</p>
-                <p>#username</p>
-            </div>
-            <div class="comment-rating-container">
-                <p>Is this comment helpful?</p>
-                <p>1</p>
-                <img src="../assets/thumbs-up.png" alt="Thumbs up">
-                <p>1</p>
-                <img src="../assets/thumbs-down.png" alt="Thumbs Down">
-            </div>
+            <label id="comment-count"></label>
         </div>
 
         <div id="submit-comment-container">
@@ -159,62 +126,6 @@
         <h3 id="similar-products-label">You might also like</h3>
 
         <div id="similar-products">
-
-            <div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <h3 class="product-title">Pofak</h3>
-                        <p class="product-stock">10 left in stock</p>
-                    </div>
-                    <img src="../assets/pofak_minoo.jpg" alt="Product image" class="product-img">
-                    <div class="card-footer">
-                        <h4 class="product-price">500$</h4>
-                        <button type="button" class="btn product-add-to-cart">add to cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <h3 class="product-title">Pofak</h3>
-                        <p class="product-stock">10 left in stock</p>
-                    </div>
-                    <img src="../assets/pofak_minoo.jpg" alt="Product image" class="product-img">
-                    <div class="card-footer">
-                        <h4 class="product-price">500$</h4>
-                        <button type="button" class="btn product-add-to-cart">add to cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <h3 class="product-title">Pofak</h3>
-                        <p class="product-stock">10 left in stock</p>
-                    </div>
-                    <img src="../assets/pofak_minoo.jpg" alt="Product image" class="product-img">
-                    <div class="card-footer">
-                        <h4 class="product-price">500$</h4>
-                        <button type="button" class="btn product-add-to-cart">add to cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <h3 class="product-title">Pofak</h3>
-                        <p class="product-stock">10 left in stock</p>
-                    </div>
-                    <img src="../assets/pofak_minoo.jpg" alt="Product image" class="product-img">
-                    <div class="card-footer">
-                        <h4 class="product-price">500$</h4>
-                        <button type="button" class="btn product-add-to-cart">add to cart</button>
-                    </div>
-                </div>
-            </div>
 
         </div>
 

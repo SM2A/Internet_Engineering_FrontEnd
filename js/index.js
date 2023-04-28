@@ -1,5 +1,5 @@
 const COMMODITIES_PATH = "http://localhost:8080/commodities";
-const ADD_TO_CART_PATH = "http://localhost:8080/commodities";
+const ADD_TO_CART_PATH = "http://localhost:8080/addToBuyList/";
 
 function getRequest(url) {
     const xhr = new XMLHttpRequest();
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let productImage = document.createElement('img');
         productImage.className = "product-img";
-        productImage.src = response[i].image;
+        productImage.src = response[i].imageUrl;
 
         let productPrice = document.createElement('h4');
         productPrice.className = "product-price";
-        productPrice.innerHTML = "$ " + response[i].price;
+        productPrice.innerHTML = response[i].price + "$";
 
         let addToCart = document.createElement('button');
         addToCart.className = "btn product-add-to-cart";
