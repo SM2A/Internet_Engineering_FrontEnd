@@ -7,6 +7,7 @@ import './App.css';
 
 import LoginPage from "./pages/Login";
 import Footer from "./components/Footer";
+import SignupPage from "./pages/Signup";
 
 const notify = (message) => toast(message);
 
@@ -16,8 +17,9 @@ function App() {
             <ToastContainer/>
             <Routes>
                 <Route exact path="/login" element={<LoginPage notify={notify}/>}/>
+                <Route exact path="/signup" element={<SignupPage notify={notify}/>}/>
             </Routes>
-            <Footer />
+            <Footer/>
         </BrowserRouter>
     );
 }

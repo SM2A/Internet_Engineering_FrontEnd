@@ -41,7 +41,7 @@ function LoginForm({notify}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="form-outline mb-4">
+            <div className="form-group mb-4">
                 <label className="form-label">Username</label>
                 <input className="form-control"
                        id="username"
@@ -53,7 +53,7 @@ function LoginForm({notify}) {
                        required
                 />
             </div>
-            <div className="form-outline mb-4">
+            <div className="form-group mb-4">
                 <label className="form-label">Password</label>
                 <input className="form-control"
                        id="password"
@@ -69,7 +69,7 @@ function LoginForm({notify}) {
                 Login
             </button>
             <div>
-                Not registered? <a href="signup.html" className="text-info">Sign up</a>
+                Not registered? <a href="/signup" className="text-info">Sign up</a>
             </div>
         </form>
     );
