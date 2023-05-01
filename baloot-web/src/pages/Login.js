@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import BalootLogo from '../components/BalootLogo';
 import {useNavigate} from "react-router-dom";
 
-import "../assets/styles/main.css"
 import "../assets/styles/signing.css"
 
 function LoginForm({notify}) {
