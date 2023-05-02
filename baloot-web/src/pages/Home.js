@@ -1,25 +1,31 @@
 import {useEffect, useRef, useState} from "react";
 import "../assets/styles/Home.css";
 import CommodityCard from "../components/commodity/CommodityCard";
+import {Pagination} from "@mui/material";
 
 export default function Home() {
     const [showAvailableCommodities, setShowAvailableCommodities] = useState(true);
     const [sortBy, setSortBy] = useState("");
     const availableCommoditiesToggle = useRef(null);
     const [commodities, setCommodities] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [commodityPerPage] = useState(12);
+    const [totalPages, setTotalPages] = useState(1);
 
     function sortByName() {
         setSortBy("name");
-        console.log("name");
     }
 
     function sortByPrice() {
         setSortBy("price");
-        console.log("price");
     }
 
     function handleShowAvailableCommodities() {
         setShowAvailableCommodities(!showAvailableCommodities);
+    }
+
+    function handlePageChange(event, value) {
+        setCurrentPage(value);
     }
 
     function deGetCommodities() {
@@ -46,9 +52,14 @@ export default function Home() {
 
     useEffect(() => {
         deGetCommodities();
+        setTotalPages(Math.ceil(commodities.length / commodityPerPage));
     }, [commodities]);
 
-    const currentCommodities = sortCommodities();
+    const lastCommodityIndex = currentPage * commodityPerPage;
+    const firstCommodityIndex = lastCommodityIndex - commodityPerPage;
+    const currentCommodities = sortCommodities().slice(firstCommodityIndex, lastCommodityIndex);
+    // const totalPages = Math.ceil(currentCommodities.length / commodityPerPage);
+
     return (
         <main className="commodities">
             <section className="filter-container">
@@ -70,10 +81,14 @@ export default function Home() {
                 </div>
             </section>
             <section className="commodities-list">
-                {currentCommodities.map((commodity, index) => {
+                {currentCommodities.map((commodity, _) => {
                     return <CommodityCard commodity={commodity}/>;
                 })}
             </section>
+            <div>
+                <Pagination count={totalPages} page={currentPage} onChange={handlePageChange}>
+                </Pagination>
+            </div>
         </main>
     );
 }
