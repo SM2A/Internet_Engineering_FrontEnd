@@ -85,7 +85,7 @@ export default function Home() {
                     return <CommodityCard commodity={commodity}/>;
                 })}
             </section>
-            <div>
+            <div className="pagination">
                 <Pagination count={totalPages} page={currentPage} onChange={handlePageChange}>
                 </Pagination>
             </div>
