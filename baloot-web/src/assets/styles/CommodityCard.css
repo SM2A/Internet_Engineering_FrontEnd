@@ -1,35 +1,23 @@
-.commodity-card:hover {
+.card:hover {
     opacity: 70%;
     transition: 0.5s;
     cursor: pointer;
 }
 
-.commodity-card {
-    flex-wrap: wrap;
+.card {
     box-shadow: 0 4px 4px rgba(208, 208, 208, 0.25);
     border-radius: 15px;
-    text-align: left;
-    horiz-align: center;
     background: white;
     margin: 1rem;
 }
 
-.commodity-card img {
-    width: 330px;
-    height: 320px;
-    border-radius: 16px;
-}
-
-.commodity-card-header {
-    padding: 0.75rem 1.25rem;
-}
-.commodity-card-header h2 {
+.card-title {
     color: var(--brown-dark-primary);
     font-weight: bold;
     font-size: 28px;
 }
 
-.commodity-card-header p {
+.card-text {
     color: var(--red-primary);
     font-size: 16px;
     margin: 0;
