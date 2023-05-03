@@ -11,6 +11,7 @@
     text-align: left;
     horiz-align: center;
     background: white;
+    max-width: 330px;
 }
 
 .product-title {
