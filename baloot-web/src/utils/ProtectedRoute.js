@@ -1,7 +1,7 @@
 import {Navigate, Outlet} from "react-router-dom";
 
-export default function ProtectedRoute({user, redirectPath = "/", children}) {
-    if (user == null) {
+export default function ProtectedRoute({isLoggedIn, redirectPath = "/", children}) {
+    if (!isLoggedIn) {
         return <Navigate to={redirectPath} replace/>;
     }
     return (
