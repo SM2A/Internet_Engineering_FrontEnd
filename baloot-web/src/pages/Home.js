@@ -53,12 +53,11 @@ export default function Home() {
     useEffect(() => {
         deGetCommodities();
         setTotalPages(Math.ceil(commodities.length / commodityPerPage));
-    }, [commodities]);
+    }, []);
 
     const lastCommodityIndex = currentPage * commodityPerPage;
     const firstCommodityIndex = lastCommodityIndex - commodityPerPage;
     const currentCommodities = sortCommodities().slice(firstCommodityIndex, lastCommodityIndex);
-    // const totalPages = Math.ceil(currentCommodities.length / commodityPerPage);
 
     return (
         <main className="commodities">
