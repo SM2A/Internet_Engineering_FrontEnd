@@ -1,0 +1,19 @@
+
+.header__userinfo {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.header__userinfo h3 {
+    color: var(--brown-dark-primary);
+}
+
+.header__userinfo button {
+    color: var(--brown-dark-primary);
+    width: 7.5em !important;
+    height: 3em !important;
+    border: none !important;
+}

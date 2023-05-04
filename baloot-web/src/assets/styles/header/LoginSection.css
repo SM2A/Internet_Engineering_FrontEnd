@@ -1,0 +1,23 @@
+.btn-info {
+    background-color: var(--cream-primary);
+    border-radius: 15px;
+    color: var(--brown-light-primary);
+    margin-left: 10px;
+}
+
+.btn-info:hover {
+    background-color: var(--brown-dark-primary);
+    border-color: transparent;
+    color: var(--cream-primary);
+}
+
+
+.login-section {
+    background-color: var(--cream-primary) !important;
+    color: var(--brown-light-primary) !important;
+    font-style: normal !important;
+    border-radius: 15px !important;
+    width: 5.5em !important;
+    height: 3em !important;
+    border: none !important;
+}
