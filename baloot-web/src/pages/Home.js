@@ -83,7 +83,7 @@ export default function Home() {
                     <button className="sort-button" onClick={sortByPrice}>Price</button>
                 </div>
             </section>
-            <section className="commodities-list">
+            <section className="d-flex flex-wrap justify-content-center m-5">
                 {currentCommodities.map((commodity, _) => {
                     return <CommodityCard commodity={commodity}/>;
                 })}

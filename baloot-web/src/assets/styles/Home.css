@@ -106,14 +106,6 @@
     background: #F5F5F5;
 }
 
-.commodities-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #F5F5F5;
-    margin: 1rem;
-}
-
 .pagination {
     display: flex;
     justify-content: center;
