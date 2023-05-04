@@ -1,11 +1,20 @@
 import {Outlet} from "react-router-dom";
-import {Header} from "../components/header/Header";
+import {Header, LoggedInHeader} from "../components/header/Header";
 
-export default function MainLayout () {
-    return (
-        <>
-            <Header />
-            <Outlet />
-        </>
-    );
+export default function MainLayout({user}) {
+    if (user == null) {
+        return (
+            <>
+                <Header/>
+                <Outlet/>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <LoggedInHeader user={user}/>
+                <Outlet/>
+            </>
+        );
+    }
 }

@@ -3,7 +3,6 @@ import SearchBar from "./SearchBar";
 import HeaderLogo from "./HeaderLogo";
 import LoginSection from "./LoginSection";
 import UserInfo from "./UserInfo";
-import {useEffect, useState} from "react";
 
 export function Header() {
     return (
@@ -15,23 +14,23 @@ export function Header() {
     );
 }
 
-export function ProviderPageHeader() {
-    const [user, setUser] = useState({});
-
-    function doGetLoggedInUser() {
-        fetch("http://localhost:8080/users/loggedInUser")
-            .then((resp) => resp.json())
-            .then((data) => setUser(data));
-    }
-
-    useEffect(() => {
-        doGetLoggedInUser();
-    }, []);
-
+export function LoggedInHeader({user}) {
     return (
         <header className="header">
             <HeaderLogo/>
+            <SearchBar/>
             <UserInfo user={user}/>
+        </header>
+    );
+}
+
+export function ProviderPageHeader({user}) {
+    return (
+        <header className="header">
+            <HeaderLogo/>
+            <div className="w-50">
+                <UserInfo user={user}/>
+            </div>
         </header>
     )
 }
