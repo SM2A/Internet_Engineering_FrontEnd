@@ -33,7 +33,7 @@ export default function Provider() {
             <section className="d-flex justify-content-center mt-3">
                 <div className="provider-info">
                     {/*todo: replace this with provider.imageUrl*/}
-                    <img src={require("../assets/images/phone.png")} alt="Provider img"/>
+                    <img src={require("../assets/images/Huawei.png")} alt="Provider img"/>
                     <p className="text-right">Since {provider.registryDate}</p>
                     <h1 className="text-left">{provider.name}</h1>
                 </div>
