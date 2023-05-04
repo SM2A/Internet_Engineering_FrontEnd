@@ -52,8 +52,12 @@ export default function Home() {
 
     useEffect(() => {
         deGetCommodities();
-        setTotalPages(Math.ceil(commodities.length / commodityPerPage));
     }, []);
+
+    useEffect(() => {
+        setTotalPages(Math.ceil(commodities.length / commodityPerPage));
+        console.log(totalPages);
+    },[commodities]);
 
     const lastCommodityIndex = currentPage * commodityPerPage;
     const firstCommodityIndex = lastCommodityIndex - commodityPerPage;
