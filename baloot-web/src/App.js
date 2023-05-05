@@ -12,6 +12,7 @@ import Commodity from "./pages/Commodity";
 import Provider from "./pages/Provider";
 import MainLayout from "./layouts/MainLayout";
 import ProviderLayout from "./layouts/ProviderLayout";
+import User from "./pages/User";
 
 const notify = (message) => toast(message);
 
@@ -22,13 +23,13 @@ function App() {
             <Routes>
                 <Route exact path="/login" element={<LoginPage notify={notify}/>}/>
                 <Route exact path="/signup" element={<SignupPage notify={notify}/>}/>
-
                 <Route element={<MainLayout/>}>
                     <Route exact path="/" element={<Home/>}/>
                     <Route exact path="/commodities/:id" element={<Commodity/>}/>
-                    <Route element={<ProviderLayout/>}>
-                        <Route exact path="/providers/:id" element={<Provider/>}/>
-                    </Route>
+                </Route>
+                <Route element={<ProviderLayout/>}>
+                    <Route exact path="/providers/:id" element={<Provider/>}/>
+                    <Route exact path="/users/:id" element={<User notify={notify}/>}/>
                 </Route>
             </Routes>
             <Footer/>

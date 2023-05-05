@@ -1,0 +1,86 @@
+
+.user-information{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.user-pic {
+    display: flex;
+
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+.user-pic > img {
+
+    margin-top: 6px;
+    width: 20px;
+    height: 20px;
+    margin-right: 22px;
+}
+
+.user-pic > div {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #593C1C;
+}
+.first-row{
+    margin-top: 35px;
+}
+.user-amount{
+    font-weight: 600;
+    font-size: 128px;
+    line-height: 155px;
+    color: #593C1C;
+}
+.add-amount{
+    margin-top: 13px;
+    box-sizing: border-box;
+    height: 57px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #919191;
+    box-shadow: 0px 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #919191;
+    text-align: center
+}
+.add-more-credit{
+    margin-top: 13px;
+    height: 57px;
+    width: 100%;
+    background: #593C1C;
+    box-shadow: 0px 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+
+.pay-now{
+    margin-left: 25%;
+    margin-top: 57px;
+    height: 57px;
+    width: 50%;
+    background: #593C1C;
+    box-shadow: 0px 4px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
