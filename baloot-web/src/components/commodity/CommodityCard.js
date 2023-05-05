@@ -9,8 +9,7 @@ export default function CommodityCard({commodity}) {
                 </a>
                 <p className="card-text">{commodity.inStock} left in stock</p>
             </div>
-            {/*todo: replace this with commodity.imageUrl*/}
-            <img className="img-fluid" src={require("../../assets/images/phone.png")} alt={commodity.name}/>
+            <img className="img-fluid" src={commodity.image} alt={commodity.name}/>
             <div className="commodity-card-footer">
                 <p>{commodity.price}</p>
                 <button>Add to Cart</button>
