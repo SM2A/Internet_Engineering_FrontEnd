@@ -1,0 +1,16 @@
+
+.header__userinfo {
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__userinfo h3 {
+    color: var(--brown-dark-primary);
+}
+
+.header__userinfo button {
+    color: var(--brown-dark-primary);
+    width: 6.5em !important;
+    height: 3em !important;
+    border: none !important;
+}
