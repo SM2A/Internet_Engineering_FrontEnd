@@ -133,7 +133,7 @@ const Commodity = () => {
                 </div>
                 {
                     comments.map((comment, _) => {
-                        return <CommentCard commodity={comment}/>;
+                        return <CommentCard comment={comment}/>;
                     })
                 }
                 <div id="submit-comment-container">
