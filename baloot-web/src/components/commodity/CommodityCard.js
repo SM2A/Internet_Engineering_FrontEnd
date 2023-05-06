@@ -9,9 +9,11 @@ export default function CommodityCard({commodity}) {
                 </a>
                 <p className="card-text">{commodity.inStock} left in stock</p>
             </div>
-            <img className="img-fluid" src={commodity.image} alt={commodity.name}/>
+            <a href={"/commodities/" + commodity.id}>
+                <img className="img-fluid" src={commodity.image} alt={commodity.name}/>
+            </a>
             <div className="commodity-card-footer">
-                <p>{commodity.price}</p>
+                <p>{commodity.price}$</p>
                 <button>Add to Cart</button>
             </div>
         </div>
