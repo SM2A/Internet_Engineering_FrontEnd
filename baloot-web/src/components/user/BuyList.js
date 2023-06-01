@@ -41,7 +41,7 @@ export function BuyList({username}) {
     const [buyItems, setBuyItems] = useState([]);
 
     function getBuyList() {
-        fetch("http://localhost:8080/" + username + "/buyList")
+        fetch("http://localhost:8080/api/" + username + "/buyList")
             .then((resp) => resp.json())
             .then((data) => {
                 setBuyItems(data.buyItems);
@@ -76,7 +76,7 @@ export function PurchasedList({username}) {
     const [purchased, setPurchased] = useState([]);
 
     function getPurchasedList() {
-        fetch("http://localhost:8080/purchased?username=" + username)
+        fetch("http://localhost:8080/api/purchased?username=" + username)
             .then((resp) => resp.json())
             .then((data) => setPurchased(data));
     }

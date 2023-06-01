@@ -29,7 +29,7 @@ export default function Home() {
     }
 
     function deGetCommodities() {
-        fetch("http://localhost:8080/commodities")
+        fetch("http://localhost:8080/api/commodities")
             .then((resp) => resp.json())
             .then((data) => setCommodities(data));
     }

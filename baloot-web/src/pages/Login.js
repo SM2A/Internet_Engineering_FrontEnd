@@ -19,7 +19,7 @@ function LoginForm({notify}) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const response = await fetch('http://127.0.0.1:8080/users/login', {
+        const response = await fetch('http://localhost:8080/api/auth/login', {
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             method: 'POST',
             mode: 'cors',
@@ -27,15 +27,20 @@ function LoginForm({notify}) {
             body: JSON.stringify({"username": username, "password": password})
         }).then((response) => {
             if (response.ok) {
-                notify("Login Successful!")
-                navigate("/")
+                notify("Login Successful!");
+                navigate("/");
+
             } else {
-                notify("Wrong username or password!")
-                navigate("/login")
+                notify("Wrong username or password!");
+                navigate("/login");
             }
             return response.json();
         });
-        console.log('A name was submitted: ' + response.body);
+        console.log(response)
+        if (response.authenticationToken != null) {
+            localStorage.setItem("token", response.authenticationToken);
+            navigate("/");
+        }
     }
 
     return (

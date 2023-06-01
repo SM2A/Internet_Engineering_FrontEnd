@@ -9,13 +9,13 @@ export default function Provider() {
     const [providedCommodities, setProvidedCommodities] = useState([]);
 
     function doGetProvider() {
-        fetch("http://localhost:8080/providers/" + id)
+        fetch("http://localhost:8080/api/providers/" + id)
             .then((resp) => resp.json())
             .then((data) => setProvider(data))
     }
 
     function doGetProvidedCommodities() {
-        fetch("http://localhost:8080/commodities/provider?id=" + id)
+        fetch("http://localhost:8080/api/commodities/provider?id=" + id)
             .then((resp) => resp.json())
             .then((data) => setProvidedCommodities(data));
     }

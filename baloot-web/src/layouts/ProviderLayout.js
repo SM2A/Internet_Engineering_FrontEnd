@@ -7,7 +7,7 @@ export default function ProviderLayout() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     function getLoggedInUser() {
-        fetch("http://localhost:8080/users/loggedInUser")
+        fetch("http://localhost:8080/api/users/loggedInUser")
             .then((resp) => {
                 if (resp.ok) {
                     setIsLoggedIn(true);

@@ -14,7 +14,7 @@ export default function User({notify}) {
 
     async function handleAddCredit(event) {
         event.preventDefault();
-        await fetch("http://localhost:8080/users/" + id + "/credit?credit=" + addCredit, {
+        await fetch("http://localhost:8080/api/users/" + id + "/credit?credit=" + addCredit, {
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             method: 'PUT',
             mode: 'cors',
@@ -30,7 +30,7 @@ export default function User({notify}) {
 
     async function handlePay(event) {
         event.preventDefault();
-        await fetch("http://localhost:8080/buyList/pay?username=" + id, {
+        await fetch("http://localhost:8080/api/buyList/pay?username=" + id, {
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             method: 'POST',
             mode: 'cors',
@@ -45,7 +45,7 @@ export default function User({notify}) {
     }
 
     function getLoggedInUser() {
-        fetch("http://localhost:8080/users/loggedInUser")
+        fetch("http://localhost:8080/api/users/loggedInUser")
             .then((resp) => resp.json())
             .then((data) => setUser(data));
     }

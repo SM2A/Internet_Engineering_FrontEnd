@@ -17,7 +17,7 @@ const Commodity = () => {
 
     useEffect(() => {
         const fetchProduct = async () => {
-            const response = await fetch(`http://localhost:8080/commodities/${id}`);
+            const response = await fetch(`http://localhost:8080/api/commodities/${id}`);
             const data = await response.json();
             setProduct(data);
             for (let i = 0; i < product.categories.length; i++) {
@@ -33,7 +33,7 @@ const Commodity = () => {
     useEffect(() => {
         if (product) {
             const fetchProvider = async () => {
-                const response = await fetch(`http://localhost:8080/providers/${product.providerId}`);
+                const response = await fetch(`http://localhost:8080/api/providers/${product.providerId}`);
                 const data = await response.json();
                 setProvider(data);
             };
@@ -43,7 +43,7 @@ const Commodity = () => {
 
     useEffect(() => {
         const fetchSimilarProducts = async () => {
-            const response = await fetch(`http://localhost:8080/commodities/suggestions/${id}`);
+            const response = await fetch(`http://localhost:8080/api/commodities/suggestions/${id}`);
             const data = await response.json();
             setSimilarProducts(data);
             data.map((commodity, _) => {
@@ -55,7 +55,7 @@ const Commodity = () => {
 
     useEffect(() => {
         const fetchComments = async () => {
-            const response = await fetch(`http://localhost:8080/comments?commodityId=${id}`);
+            const response = await fetch(`http://localhost:8080/api/comments?commodityId=${id}`);
             const data = await response.json();
             setComments(data);
         };
@@ -63,7 +63,7 @@ const Commodity = () => {
     }, [id]);
 
     const handleAddToCart = async (productId) => {
-        await fetch(`http://localhost:8080/addToBuyList/username/${productId}`, {method: 'PUT'});
+        await fetch(`http://localhost:8080/addToBuyList/api/username/${productId}`, {method: 'PUT'});
     };
 
     return (

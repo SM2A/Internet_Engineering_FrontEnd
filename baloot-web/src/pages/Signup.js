@@ -41,7 +41,7 @@ function SignupForm({notify}) {
             notify("Error: fields cannot be empty")
             return
         }
-        const response = await fetch('http://127.0.0.1:8080/users/signup', {
+        const response = await fetch('http://localhost:8080/api/auth/signup', {
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             method: 'POST',
             mode: 'cors',
