@@ -56,11 +56,11 @@ function SignupForm({notify}) {
             })
         }).then((response) => {
             if (response.ok) {
-                notify("signup Successful! Now try to login...")
-                navigate("/login")
+                notify("signup Successful! Now try to login...");
+                navigate("/login", {replace: true});
             } else {
-                notify("username is already taken!")
-                navigate("/signup")
+                notify("username is already taken!");
+                navigate("/signup", {replace: true});
             }
             return response.json();
         });

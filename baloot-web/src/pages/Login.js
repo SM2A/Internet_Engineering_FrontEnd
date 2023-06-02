@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import BalootLogo from '../components/BalootLogo';
-import {useNavigate} from "react-router-dom";
 
 import "../assets/styles/signing.css"
 
 function LoginForm({notify}) {
-    const navigate = useNavigate();
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
 
@@ -28,18 +26,17 @@ function LoginForm({notify}) {
         }).then((response) => {
             if (response.ok) {
                 notify("Login Successful!");
-                navigate("/");
-
+                window.location.replace("/")
             } else {
                 notify("Wrong username or password!");
-                navigate("/login");
+                window.location.replace("/login")
             }
             return response.json();
         });
         console.log(response)
         if (response.authenticationToken != null) {
             localStorage.setItem("token", response.authenticationToken);
-            navigate("/");
+            window.location.replace("/")
         }
     }
 
