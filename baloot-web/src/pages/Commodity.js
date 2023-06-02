@@ -14,16 +14,19 @@ const Commodity = () => {
     const [provider, setProvider] = useState({});
     const [similarProducts, setSimilarProducts] = useState([]);
     const [comments, setComments] = useState([]);
+    let token = localStorage.getItem("token")
 
     useEffect(() => {
         const fetchProduct = async () => {
-            const response = await fetch(`http://localhost:8080/api/commodities/${id}`);
+            const response = await fetch(`http://localhost:8080/api/commodities/${id}`, {
+                headers: {'Authorization': `Bearer ${token}`}
+            });
             const data = await response.json();
             setProduct(data);
-            for (let i = 0; i < product.categories.length; i++) {
+            for (let i = 0; i < data.categories.length; i++) {
                 let category = document.createElement('li');
                 category.className = "product-category";
-                category.innerHTML = product.categories[i];
+                category.innerHTML = data.categories[i];
                 document.getElementById('category-container').appendChild(category);
             }
         };
@@ -31,9 +34,11 @@ const Commodity = () => {
     }, [id]);
 
     useEffect(() => {
-        if (product) {
+        if (product.providerId) {
             const fetchProvider = async () => {
-                const response = await fetch(`http://localhost:8080/api/providers/${product.providerId}`);
+                const response = await fetch(`http://localhost:8080/api/providers/${product.providerId}`, {
+                    headers: {'Authorization': `Bearer ${token}`}
+                });
                 const data = await response.json();
                 setProvider(data);
             };
@@ -43,7 +48,9 @@ const Commodity = () => {
 
     useEffect(() => {
         const fetchSimilarProducts = async () => {
-            const response = await fetch(`http://localhost:8080/api/commodities/suggestions/${id}`);
+            const response = await fetch(`http://localhost:8080/api/commodities/suggestions/${id}`, {
+                headers: {'Authorization': `Bearer ${token}`}
+            });
             const data = await response.json();
             setSimilarProducts(data);
             data.map((commodity, _) => {
@@ -55,7 +62,9 @@ const Commodity = () => {
 
     useEffect(() => {
         const fetchComments = async () => {
-            const response = await fetch(`http://localhost:8080/api/comments?commodityId=${id}`);
+            const response = await fetch(`http://localhost:8080/api/comments?commodityId=${id}`, {
+                headers: {'Authorization': `Bearer ${token}`}
+            });
             const data = await response.json();
             setComments(data);
         };
@@ -63,7 +72,10 @@ const Commodity = () => {
     }, [id]);
 
     const handleAddToCart = async (productId) => {
-        await fetch(`http://localhost:8080/addToBuyList/api/username/${productId}`, {method: 'PUT'});
+        await fetch(`http://localhost:8080/addToBuyList/api/username/${productId}`,{
+            method: 'PUT',
+            headers: {'Authorization': `Bearer ${token}`}
+        });
     };
 
     return (

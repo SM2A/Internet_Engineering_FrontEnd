@@ -7,6 +7,7 @@ export default function User({notify}) {
     const {id} = useParams();
     const [user, setUser] = useState({});
     const [addCredit, setAddCredit] = useState('');
+    let token = localStorage.getItem("token")
 
     function handleNewCredit(event) {
         setAddCredit(event.target.value);
@@ -15,7 +16,7 @@ export default function User({notify}) {
     async function handleAddCredit(event) {
         event.preventDefault();
         await fetch("http://localhost:8080/api/users/" + id + "/credit?credit=" + addCredit, {
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': `Bearer ${token}`},
             method: 'PUT',
             mode: 'cors',
             redirect: 'follow'
@@ -31,7 +32,7 @@ export default function User({notify}) {
     async function handlePay(event) {
         event.preventDefault();
         await fetch("http://localhost:8080/api/buyList/pay?username=" + id, {
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': `Bearer ${token}`},
             method: 'POST',
             mode: 'cors',
             redirect: 'follow'
@@ -45,7 +46,9 @@ export default function User({notify}) {
     }
 
     function getLoggedInUser() {
-        fetch("http://localhost:8080/api/users/loggedInUser")
+        fetch("http://localhost:8080/api/users/" + id, {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => setUser(data));
     }
