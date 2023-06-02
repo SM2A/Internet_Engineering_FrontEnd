@@ -15,6 +15,17 @@ function LoginForm({notify}) {
         setPassword(event.target.value);
     }
 
+    function oAuthHandle() {
+        const response = fetch("http://localhost:8080/oauth2/authorization/github?redirect_uri=http://localhost:3000/oauth2/redirect")
+            .then((response) => {
+            /*if (response.ok) {
+
+            }*/
+            console.log(response)
+        });
+            console.log(response)
+    }
+
     async function handleSubmit(event) {
         event.preventDefault();
         const response = await fetch('http://localhost:8080/api/auth/login', {
@@ -71,6 +82,9 @@ function LoginForm({notify}) {
             </button>
             <div>
                 Not registered? <a href="/signup" className="text-info">Sign up</a>
+                <br></br>
+                {/*<a className="text-info" onClick={oAuthHandle}>Login with Github</a>*/}
+                <a href="http://localhost:8080/oauth2/authorization/github?redirect_uri=http://localhost:3000/oauth2/redirect" className="text-info">Login with Github</a>
             </div>
         </form>
     );
