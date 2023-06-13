@@ -13,6 +13,7 @@ import Provider from "./pages/Provider";
 import MainLayout from "./layouts/MainLayout";
 import ProviderLayout from "./layouts/ProviderLayout";
 import User from "./pages/User";
+import OAuth2RedirectHandler from "./pages/OAuth2RedirectHandler";
 
 const notify = (message) => toast(message);
 
@@ -49,6 +50,7 @@ function App() {
                     <Route exact path="/commodities/:id" element={<Navigate  to="/login" />}/>
                     <Route exact path="/providers/:id" element={<Navigate  to="/login" />}/>
                     <Route exact path="/users/:id" element={<Navigate  to="/login" />}/>
+                    <Route exact path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
