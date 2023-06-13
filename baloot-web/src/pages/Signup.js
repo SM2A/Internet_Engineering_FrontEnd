@@ -41,7 +41,7 @@ function SignupForm({notify}) {
             notify("Error: fields cannot be empty")
             return
         }
-        const response = await fetch('http://127.0.0.1:8080/users/signup', {
+        const response = await fetch('http://localhost:8080/api/auth/signup', {
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             method: 'POST',
             mode: 'cors',
@@ -56,11 +56,11 @@ function SignupForm({notify}) {
             })
         }).then((response) => {
             if (response.ok) {
-                notify("signup Successful! Now try to login...")
-                navigate("/login")
+                notify("signup Successful! Now try to login...");
+                navigate("/login", {replace: true});
             } else {
-                notify("username is already taken!")
-                navigate("/signup")
+                notify("username is already taken!");
+                navigate("/signup", {replace: true});
             }
             return response.json();
         });

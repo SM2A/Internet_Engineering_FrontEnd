@@ -11,6 +11,7 @@ export default function Home() {
     const [currentPage, setCurrentPage] = useState(1);
     const [commodityPerPage] = useState(12);
     const [totalPages, setTotalPages] = useState(1);
+    let token = localStorage.getItem("token")
 
     function sortByName() {
         setSortBy("name");
@@ -29,7 +30,9 @@ export default function Home() {
     }
 
     function deGetCommodities() {
-        fetch("http://localhost:8080/commodities")
+        fetch("http://localhost:8080/api/commodities", {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => setCommodities(data));
     }

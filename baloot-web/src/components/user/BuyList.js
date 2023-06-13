@@ -39,9 +39,12 @@ function PurchasedItem({item}) {
 
 export function BuyList({username}) {
     const [buyItems, setBuyItems] = useState([]);
+    let token = localStorage.getItem("token")
 
     function getBuyList() {
-        fetch("http://localhost:8080/" + username + "/buyList")
+        fetch("http://localhost:8080/api/buyList/" + username, {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => {
                 setBuyItems(data.buyItems);
@@ -53,30 +56,50 @@ export function BuyList({username}) {
         getBuyList();
     }, []);
 
-    return (
-        <table className="table-cart">
-            <tr className="title-row">
-                <th>Image</th>
-                <th>Name</th>
-                <th>Categories</th>
-                <th>Price</th>
-                <th>Provider ID</th>
-                <th>Rating</th>
-                <th>In Stock</th>
-                <th>In Card</th>
-            </tr>
-            {buyItems.map((item, _) => {
-                return <BuyListItem item={item}/>
-            })}
-        </table>
-    );
+    if (buyItems) {
+        return (
+            <table className="table-cart">
+                <tr className="title-row">
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Categories</th>
+                    <th>Price</th>
+                    <th>Provider ID</th>
+                    <th>Rating</th>
+                    <th>In Stock</th>
+                    <th>In Card</th>
+                </tr>
+                {buyItems.map((item, _) => {
+                    return <BuyListItem item={item}/>
+                })}
+            </table>
+        );
+    } else {
+        return (
+            <table className="table-cart">
+                <tr className="title-row">
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Categories</th>
+                    <th>Price</th>
+                    <th>Provider ID</th>
+                    <th>Rating</th>
+                    <th>In Stock</th>
+                    <th>In Card</th>
+                </tr>
+            </table>
+        );
+    }
 }
 
 export function PurchasedList({username}) {
     const [purchased, setPurchased] = useState([]);
+    let token = localStorage.getItem("token")
 
     function getPurchasedList() {
-        fetch("http://localhost:8080/purchased?username=" + username)
+        fetch("http://localhost:8080/api/purchased?username=" + username, {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => setPurchased(data));
     }

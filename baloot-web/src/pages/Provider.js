@@ -7,15 +7,20 @@ export default function Provider() {
     const {id} = useParams();
     const [provider, setProvider] = useState({});
     const [providedCommodities, setProvidedCommodities] = useState([]);
+    let token = localStorage.getItem("token")
 
     function doGetProvider() {
-        fetch("http://localhost:8080/providers/" + id)
+        fetch("http://localhost:8080/api/providers/" + id, {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => setProvider(data))
     }
 
     function doGetProvidedCommodities() {
-        fetch("http://localhost:8080/commodities/provider?id=" + id)
+        fetch("http://localhost:8080/api/commodities/provider?id=" + id, {
+            headers: {'Authorization': `Bearer ${token}`}
+        })
             .then((resp) => resp.json())
             .then((data) => setProvidedCommodities(data));
     }
