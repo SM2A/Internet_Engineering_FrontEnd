@@ -80,8 +80,8 @@ function LoginForm({notify}) {
             <div>
                 Not registered? <a href="/signup" className="text-info">Sign up</a>
                 <br></br>
-                <a className="text-info" onClick={oAuthHandle}>Login with Github</a>
-                {/*<a href="http://localhost:8080/oauth2/authorization/github" className="text-info">Login with Github</a>*/}
+                {/*<a className="text-info" onClick={oAuthHandle}>Login with Github</a>*/}
+                <a href="http://localhost:8080/oauth2/authorization/github" className="text-info">Login with Github</a>
             </div>
         </form>
     );
